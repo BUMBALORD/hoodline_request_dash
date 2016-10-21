@@ -1,0 +1,10 @@
+<p> The IP Addresses are: </p>
+
+<!-- <% @requests.each do |request| %> -->
+  <!-- <p> <%= request.ip_address %>   <%= request.dates %></p> -->
+<!-- <% end %> -->
+
+<%= simple_form_for @requests do |f| %>
+  <%= f.input :ip_address, collection: requests %>
+  <%= f.button :submit %>
+<% end %>
