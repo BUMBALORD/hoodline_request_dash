@@ -1,28 +1,28 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app to parse and display the ip address and amount of times it accessed the server for Hoodline directly from the server logs.
 
-Things you may want to cover:
+The dashboard is created with the administrate gem.
 
-* Ruby version
+To use:
 
-* System dependencies
+Install the gems with:
 
-* Configuration
+$ bundle install
 
-* Database creation
+Create and migrate the database with:
 
-* Database initialization
+$ rake db:create
+$ rake db:migrate
 
-* How to run the test suite
+Once the database has been created and migrated, run the rake task that will parse the logs and populate the database:
 
-* Services (job queues, cache servers, search engines, etc.)
+$rake import_resources:parse_file
 
-* Deployment instructions
+Run your server with:
 
-* ...
+$rails s
 
+And finally, navigate to the following to see the results and look up any ip address or server request time:
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+localhost:3000/admin/requests
